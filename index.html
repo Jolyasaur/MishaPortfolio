@@ -72,8 +72,7 @@
             background: linear-gradient(145deg, #ffffff, #fff5f8);
             border-radius: 25px;
             border: 2px solid #FFE4E1;
-            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2),
-                        -5px -5px 15px rgba(255, 255, 255, 0.7);
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
@@ -81,8 +80,7 @@
 
         .project-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 8px 8px 20px rgba(255, 182, 193, 0.3),
-                        -8px -8px 20px rgba(255, 255, 255, 0.8);
+            box-shadow: 8px 8px 20px rgba(255, 182, 193, 0.3);
             border-color: #FFB6C1;
         }
 
@@ -205,7 +203,6 @@
             cursor: pointer;
             background: linear-gradient(45deg, #FFB6C1, #FFC0CB) !important;
             color: #4A4A4A !important;
-            border: none;
         }
 
         .skill-badge:hover {
@@ -891,27 +888,27 @@
             .hero-anime-image {
                 display: none;
             }
+
+            /* Add these styles for smaller buttons on mobile */
+            .hero-btn {
+                padding: 8px 20px;  /* Reduced padding */
+                font-size: 0.85rem; /* Smaller font size */
+                min-width: 120px;   /* Smaller minimum width */
+                margin: 0 5px;      /* Reduced margin */
+            }
+
+            /* Adjust the gap between buttons */
+            .d-flex.gap-3 {
+                gap: 0.5rem !important;
+            }
         }
 
-        /* Add styles for smaller phones */
+        /* Add specific styles for even smaller screens */
         @media (max-width: 480px) {
-            .profile-image-container {
-                width: 150px;
-                height: 150px;
-            }
-
-            .display-1 {
-                font-size: 2rem !important;
-            }
-
             .hero-btn {
-                font-size: 0.85rem;
-                padding: 8px 20px;
-            }
-
-            .social-icons a {
-                font-size: 1.3rem;
-                margin: 0 8px;
+                padding: 6px 15px;  /* Even smaller padding */
+                font-size: 0.8rem;  /* Even smaller font */
+                min-width: 100px;   /* Even smaller width */
             }
         }
 
@@ -971,6 +968,443 @@
                 font-size: 1.5rem;
             }
         }
+
+        /* Add these styles for the services section */
+        #services {
+            background-color: #FFF5F8;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        #services h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB6C1, #FFC0CB);
+            border-radius: 2px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid #FFE4E1;
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFB6C1;
+            box-shadow: 8px 8px 20px rgba(255, 182, 193, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #FFB6C1;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            color: #4A4A4A;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-card::before {
+            content: '✨';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.2rem;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: rotate(45deg) scale(1.2);
+            opacity: 1;
+        }
+
+        /* Add these decorative elements */
+        .services-decoration {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.5;
+            pointer-events: none;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .services-dec-1 { top: 10%; left: 5%; content: '🎨'; }
+        .services-dec-2 { top: 20%; right: 5%; content: '💖'; }
+        .services-dec-3 { bottom: 10%; left: 8%; content: '✨'; }
+        .services-dec-4 { bottom: 20%; right: 8%; content: '🌸'; }
+
+        @media (max-width: 768px) {
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .service-icon {
+                font-size: 2rem;
+            }
+            
+            .service-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Update the belt animation styles */
+        .services-belt {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+            background: linear-gradient(to right, #FFF5F8 0%, transparent 5%, transparent 95%, #FFF5F8 100%);
+        }
+
+        .services-belt-row {
+            display: flex;
+            animation: scroll 15s linear infinite;
+            padding: 1rem 0;
+            width: fit-content;
+        }
+
+        .services-belt-row:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 6));
+            }
+        }
+
+        .service-card {
+            min-width: 300px;
+            margin: 0 1rem;
+            flex-shrink: 0;
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid #FFE4E1;
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Add fade effect on the edges */
+        .services-belt::before,
+        .services-belt::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 5%;
+            height: 100%;
+            z-index: 2;
+        }
+
+        .services-belt::before {
+            left: 0;
+            background: linear-gradient(to right, #FFF5F8, transparent);
+        }
+
+        .services-belt::after {
+            right: 0;
+            background: linear-gradient(to left, #FFF5F8, transparent);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .service-card {
+                min-width: 250px;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-250px * 6));
+                }
+            }
+        }
+
+        /* Update the copyright section styles */
+        .copyright {
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.7), rgba(255, 192, 203, 0.7));
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 2px solid rgba(255, 182, 193, 0.3);
+        }
+
+        .copyright p {
+            color: #4A4A4A;
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .copyright span {
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 0 3px;
+        }
+
+        .copyright span:hover {
+            transform: scale(1.1) rotate(5deg);
+            text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.5);
+        }
+
+        .copyright-icon {
+            font-size: 1.1rem;
+            margin: 0 5px;
+            vertical-align: middle;
+            filter: drop-shadow(1px 1px 2px rgba(255, 182, 193, 0.5));
+        }
+
+        /* Update sparkle decorations */
+        .copyright::before,
+        .copyright::after {
+            display: none;
+        }
+
+        /* Add these styles for the footer section */
+        .footer {
+            background: linear-gradient(135deg, rgba(255, 228, 225, 0.9), rgba(255, 192, 203, 0.9));
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-heading {
+            font-size: 1.5rem;
+            color: #4A4A4A;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFB6C1, #FFC0CB);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #4A4A4A;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-links a::before {
+            content: '✦';
+            margin-right: 8px;
+            font-size: 0.8em;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            transform: translateX(5px);
+            color: #FF69B4;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #4A4A4A;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: #FFB6C1;
+            font-size: 1.2rem;
+        }
+
+        .footer-social {
+            margin-top: 2rem;
+        }
+
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 10px rgba(255, 182, 193, 0.3);
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px) rotate(10deg);
+            background: white;
+        }
+
+        .footer-decoration {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 3rem 0 1rem;
+            }
+            
+            .footer-column {
+                margin-bottom: 2rem;
+                text-align: left;
+            }
+            
+            .footer-heading::after {
+                left: 0;
+                transform: none;
+            }
+            
+            .footer-contact {
+                justify-content: flex-start;
+            }
+
+            .footer-social {
+                text-align: left;
+            }
+
+            .footer-links {
+                padding-left: 0;
+            }
+
+            .footer-links li {
+                text-align: left;
+            }
+
+            .footer p {
+                text-align: left;
+            }
+        }
+
+        /* Add this to your style section */
+        p {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Update the footer social icon styles to match hero section */
+        .footer-social a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 40px;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 10px rgba(255, 182, 193, 0.3);
+        }
+
+        /* GitHub */
+        .footer-social .fa-github {
+            color: #333;
+        }
+        .footer-social .fa-github:hover {
+            color: #2b3137;
+        }
+
+        /* Instagram */
+        .footer-social .fa-instagram {
+            color: #E1306C;
+        }
+        .footer-social .fa-instagram:hover {
+            color: #C13584;
+        }
+
+        /* Discord */
+        .footer-social .fa-discord {
+            color: #7289DA;
+        }
+        .footer-social .fa-discord:hover {
+            color: #5865F2;
+        }
+
+        /* Email */
+        .footer-social .fa-envelope {
+            color: #EA4335;
+        }
+        .footer-social .fa-envelope:hover {
+            color: #D93025;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-5px) rotate(10deg);
+            background: white;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -980,7 +1414,6 @@
 
     <script type="text/babel">
         function Portfolio() {
-            const [activeSection, setActiveSection] = React.useState('home');
             const [isLoading, setIsLoading] = React.useState(true);
 
             React.useEffect(() => {
@@ -1011,6 +1444,12 @@
 
                 document.querySelectorAll('section').forEach(section => {
                     observer.observe(section);
+                });
+
+                // Initialize tooltips
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
                 });
 
                 setIsLoading(false);
@@ -1156,7 +1595,7 @@
                                         <a className="nav-link" href="#skills">Skills</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#contact">Contact</a>
+                                        <a className="nav-link" href="#services">Services</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1186,10 +1625,20 @@
                                         <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
                                     </div>
                                     <div className="d-flex gap-3">
-                                        <button className="btn hero-btn btn-light">
+                                        <button 
+                                            className="btn hero-btn btn-light"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            title="Under Development 🚧"
+                                        >
                                             View My Work
                                         </button>
-                                        <button className="btn hero-btn btn-outline-light">
+                                        <button 
+                                            className="btn hero-btn btn-outline-light"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            title="Under Development 🚧"
+                                        >
                                             Download CV
                                         </button>
                                     </div>
@@ -1263,6 +1712,141 @@
                             </div>
                         </div>
                     </section>
+
+                    {/* Services Section */}
+                    <section id="services" className="text-center">
+                        <div className="container-fluid">
+                            <h2 data-aos="fade-up">✨ My Services ✨</h2>
+                            <div className="services-belt">
+                                <div className="services-belt-row">
+                                    {/* First set of cards */}
+                                    <div className="service-card">
+                                        <div className="service-icon">🎨</div>
+                                        <h3 className="service-title">Graphic Design</h3>
+                                        <p className="service-description">
+                                            Creating cute and professional designs for your brand.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">💻</div>
+                                        <h3 className="service-title">Web Design</h3>
+                                        <p className="service-description">
+                                            Crafting beautiful and responsive websites.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">✨</div>
+                                        <h3 className="service-title">UI/UX Design</h3>
+                                        <p className="service-description">
+                                            Designing delightful user interfaces and experiences.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">🎯</div>
+                                        <h3 className="service-title">Logo Making</h3>
+                                        <p className="service-description">
+                                            Creating unique and memorable logos using Canva for your brand.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">📱</div>
+                                        <h3 className="service-title">Social Media Design</h3>
+                                        <p className="service-description">
+                                            Creating eye-catching social media content.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">🖼️</div>
+                                        <h3 className="service-title">Basic Photoshop Edits</h3>
+                                        <p className="service-description">
+                                            Professional photo editing and image manipulation.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">🎮</div>
+                                        <h3 className="service-title">Gaming Thumbnails</h3>
+                                        <p className="service-description">
+                                            Eye-catching thumbnails for gaming content.
+                                        </p>
+                                    </div>
+                                    {/* Duplicate cards for seamless loop */}
+                                    <div className="service-card">
+                                        <div className="service-icon">🎨</div>
+                                        <h3 className="service-title">Graphic Design</h3>
+                                        <p className="service-description">
+                                            Creating cute and professional designs for your brand.
+                                        </p>
+                                    </div>
+                                    <div className="service-card">
+                                        <div className="service-icon">💻</div>
+                                        <h3 className="service-title">Web Design</h3>
+                                        <p className="service-description">
+                                            Crafting beautiful and responsive websites.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="services-decoration services-dec-1">🎨</div>
+                        <div className="services-decoration services-dec-2">💖</div>
+                        <div className="services-decoration services-dec-3">✨</div>
+                        <div className="services-decoration services-dec-4">🌸</div>
+                    </section>
+
+                    {/* Footer Section - remove decorations */}
+                    <footer className="footer">
+                        <div className="container footer-content">
+                            <div className="row">
+                                <div className="col-md-4 footer-column">
+                                    <h3 className="footer-heading">About Me</h3>
+                                    <p>I am in my senior year doing front-end designs. I do basic graphic designs too with the use of Canva. From the Philippines 🇵🇭</p>
+                                    <div className="footer-social">
+                                        <a href="https://github.com/Jolyasaur" target="_blank"><i className="fab fa-github"></i></a>
+                                        <a href="https://www.instagram.com/mishaxgraphics/" target="_blank"><i className="fab fa-instagram"></i></a>
+                                        <a href="https://discord.com/users/jolya0" target="_blank"><i className="fab fa-discord"></i></a>
+                                        <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
+                                    </div>
+                                </div>
+                                <div className="col-md-4 footer-column">
+                                    <h3 className="footer-heading">Quick Links</h3>
+                                    <ul className="footer-links">
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#projects">Projects</a></li>
+                                        <li><a href="#skills">Skills</a></li>
+                                        <li><a href="#services">Services</a></li>
+                                    </ul>
+                                </div>
+                                <div className="col-md-4 footer-column">
+                                    <h3 className="footer-heading">Contact Info</h3>
+                                    <div className="footer-contact">
+                                        <i className="fas fa-envelope"></i>
+                                        <span>mishaxgraphics@gmail.com</span>
+                                    </div>
+                                    <div className="footer-contact">
+                                        <i className="fab fa-discord"></i>
+                                        <span>jolya0</span>
+                                    </div>
+                                    <div className="footer-contact">
+                                        <i className="fab fa-instagram"></i>
+                                        <span>mishaxgraphics</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+
+                    {/* Copyright Section - remove decorations */}
+                    <div className="copyright">
+                        <p>
+                            <span>Made with</span>
+                            <span className="copyright-icon">💖</span>
+                            <span>by</span>
+                            <span className="copyright-icon">✨</span>
+                            <span>Misha</span>
+                            <span className="copyright-icon">🌸</span>
+                            <span>{new Date().getFullYear()}</span>
+                        </p>
+                    </div>
                 </div>
             );
         }
