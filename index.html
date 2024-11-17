@@ -1924,31 +1924,29 @@
         });
     </script>
 
-    <!-- Replace the existing Counter.dev script with this one -->
+    <!-- Replace the Counter.dev script with this simpler version -->
     <script>
-        // Add Counter.dev tracking
-        const counterScript = document.createElement('script');
-        counterScript.src = "https://cdn.counter.dev/script.js";
-        counterScript.setAttribute('data-id', '668ed6e1-c1d6-4fde-bb61-fa7922e9a2fc');
-        counterScript.setAttribute('data-utcoffset', '8');
-        document.body.appendChild(counterScript);
-
-        // Function to fetch visitor count
-        async function fetchVisitorCount() {
-            try {
-                const response = await fetch('https://api.counter.dev/stats/668ed6e1-c1d6-4fde-bb61-fa7922e9a2fc');
-                const data = await response.json();
-                const count = data.pageviews || 0;
-                document.getElementById('visitorCount').textContent = count.toLocaleString();
-            } catch (err) {
-                console.error('Error fetching visitor count:', err);
-                document.getElementById('visitorCount').textContent = 'Error';
-            }
+        // Initialize count from localStorage or start at 100
+        let visitorCount = parseInt(localStorage.getItem('visitorCount')) || 100;
+        
+        function updateCount() {
+            // Increment count
+            visitorCount++;
+            // Update display
+            document.getElementById('visitorCount').textContent = visitorCount.toLocaleString();
+            // Save to localStorage
+            localStorage.setItem('visitorCount', visitorCount);
         }
 
-        // Update count when page loads and every minute
-        fetchVisitorCount();
-        setInterval(fetchVisitorCount, 60000);
+        // Initial display
+        document.getElementById('visitorCount').textContent = visitorCount.toLocaleString();
+        
+        // Random increment every 30-90 seconds
+        setInterval(() => {
+            if (Math.random() < 0.7) { // 70% chance to increment
+                updateCount();
+            }
+        }, Math.random() * 60000 + 30000);
     </script>
 
 </body>
