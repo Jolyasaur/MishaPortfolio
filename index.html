@@ -1457,6 +1457,91 @@
                 min-width: 120px;
             }
         }
+
+        /* Add these updated styles for skill progress bars */
+        .skill-progress {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px rgba(255, 182, 193, 0.2);
+            border: 2px solid #FFE4E1;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-progress:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.3);
+            border-color: #FFB6C1;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.3rem;
+            color: #4A4A4A;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .progress {
+            height: 0.8rem;
+            background-color: #FFE4E1;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #FFB6C1;
+        }
+
+        .progress-bar {
+            background: linear-gradient(45deg, #FFB6C1, #FFC0CB);
+            transition: width 1.5s ease-in-out;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 0.8rem 0.8rem;
+            animation: progress-animation 1s linear infinite;
+        }
+
+        /* Update the skills container width */
+        .skills-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Add responsive adjustments */
+        @media (max-width: 768px) {
+            .skill-progress {
+                padding: 1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .skill-name {
+                font-size: 0.85rem;
+            }
+            
+            .progress {
+                height: 0.6rem;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -1742,7 +1827,7 @@
                         </div>
                     </section>
 
-                    {/* Update the Skills Section JSX */}
+                    {/* Skills Section */}
                     <section id="skills" className="py-5">
                         <div className="skills-decoration skills-dec-1">🎨</div>
                         <div className="skills-decoration skills-dec-2">✨</div>
@@ -1750,22 +1835,41 @@
                         <div className="skills-decoration skills-dec-4">💝</div>
                         
                         <div className="container">
-                            <h2 className="text-center mb-5" data-aos="fade-up">✨ My Skills ✨</h2>
+                            <h2 className="text-center mb-4" data-aos="fade-up">✨ My Skills ✨</h2>
                             <div className="row justify-content-center">
-                                <div className="col-md-10">
-                                    <div className="skills-container" data-aos="fade-up">
-                                        <div className="d-flex flex-wrap justify-content-center">
-                                            {skills.map((skill, index) => (
-                                                <span 
-                                                    key={index} 
-                                                    className="skill-badge"
-                                                    data-aos="zoom-in"
-                                                    data-aos-delay={index * 100}
-                                                >
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
+                                <div className="col-md-6">
+                                    <div className="skills-container">
+                                        {[
+                                            { name: "HTML", percentage: 60 },
+                                            { name: "CSS", percentage: 55 },
+                                            { name: "JavaScript", percentage: 30 },
+                                            { name: "React", percentage: 5 },
+                                            { name: "Bootstrap", percentage: 60 },
+                                            { name: "Graphic Design", percentage: 80 }
+                                        ].map((skill, index) => (
+                                            <div 
+                                                key={index} 
+                                                className="skill-progress"
+                                                data-aos="fade-up"
+                                                data-aos-delay={index * 50}
+                                            >
+                                                <div className="skill-name">
+                                                    <span>✦ {skill.name}</span>
+                                                    <span>{skill.percentage}%</span>
+                                                </div>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar" 
+                                                        role="progressbar" 
+                                                        style={{ width: `${skill.percentage}%` }}
+                                                        aria-valuenow={skill.percentage} 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
