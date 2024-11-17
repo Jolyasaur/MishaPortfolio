@@ -1542,6 +1542,264 @@
                 height: 0.6rem;
             }
         }
+
+        /* Floating Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            border: 3px solid white;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+            z-index: 1000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        .theme-toggle i {
+            font-size: 1.5rem;
+            color: #4A4A4A;
+            transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        [data-theme="dark"] {
+            background-color: #2D2D2D;
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .hero-section {
+            background: linear-gradient(45deg, #3D3D3D, #2D2D2D);
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .project-card {
+            background: linear-gradient(145deg, #3D3D3D, #2D2D2D);
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .project-card .card-title,
+        [data-theme="dark"] .project-card .card-text {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .navbar {
+            background-color: rgba(45, 45, 45, 0.9) !important;
+        }
+
+        [data-theme="dark"] .navbar-brand,
+        [data-theme="dark"] .nav-link {
+            color: #FFFFFF !important;
+        }
+
+        [data-theme="dark"] #projects,
+        [data-theme="dark"] #skills,
+        [data-theme="dark"] #services {
+            background-color: #2D2D2D !important;
+        }
+
+        [data-theme="dark"] .footer {
+            background: linear-gradient(135deg, #3D3D3D, #2D2D2D);
+        }
+
+        [data-theme="dark"] .copyright {
+            background: linear-gradient(135deg, rgba(61, 61, 61, 0.7), rgba(45, 45, 45, 0.7));
+        }
+
+        /* Responsive Design for Theme Toggle */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+
+            .theme-toggle i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Add these to your existing dark mode styles section */
+        [data-theme="dark"] .btn-light,
+        [data-theme="dark"] .btn-outline-light {
+            background-color: #FFB6C1;
+            border-color: #FFB6C1;
+            color: #2D2D2D !important;
+        }
+
+        [data-theme="dark"] .btn-light:hover,
+        [data-theme="dark"] .btn-outline-light:hover {
+            background-color: #FFC0CB;
+            border-color: #FFC0CB;
+            color: #2D2D2D !important;
+        }
+
+        [data-theme="dark"] .hero-btn {
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
+            color: #2D2D2D !important;
+            border-color: #FFB6C1;
+        }
+
+        [data-theme="dark"] .hero-btn:hover {
+            background: linear-gradient(135deg, #FFC0CB, #FFD1DC);
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        [data-theme="dark"] .badge {
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB) !important;
+            color: #2D2D2D !important;
+            border-color: #FFB6C1;
+        }
+
+        [data-theme="dark"] .skill-badge {
+            background: linear-gradient(135deg, #FFB6C1, #FFC0CB) !important;
+            color: #2D2D2D !important;
+            border-color: #FFB6C1;
+        }
+
+        [data-theme="dark"] .counter-box {
+            background: rgba(255, 182, 193, 0.9);
+            color: #2D2D2D;
+            border-color: #FFB6C1;
+        }
+
+        [data-theme="dark"] #visitorCount {
+            color: #2D2D2D;
+        }
+
+        [data-theme="dark"] .counter-label {
+            color: #2D2D2D;
+        }
+
+        [data-theme="dark"] .contact-form {
+            background: #3D3D3D;
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .form-control {
+            background: rgba(61, 61, 61, 0.9);
+            border-color: #4A4A4A;
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .form-control::placeholder {
+            color: #AAAAAA;
+        }
+
+        [data-theme="dark"] .form-control:focus {
+            background: rgba(61, 61, 61, 0.95);
+            border-color: #FFB6C1;
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .skills-container {
+            background: #3D3D3D;
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .skill-progress {
+            background: #3D3D3D;
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .skill-name {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .progress {
+            background-color: #2D2D2D;
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .service-card {
+            background: #3D3D3D;
+            border-color: #4A4A4A;
+        }
+
+        [data-theme="dark"] .service-title,
+        [data-theme="dark"] .service-description {
+            color: #FFFFFF;
+        }
+
+        /* Add these to your existing dark mode styles section */
+        [data-theme="dark"] .footer-heading {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .footer p {
+            color: #CCCCCC;
+        }
+
+        [data-theme="dark"] .footer-links a {
+            color: #CCCCCC;
+        }
+
+        [data-theme="dark"] .footer-links a:hover {
+            color: #FFB6C1;
+        }
+
+        [data-theme="dark"] .footer-contact {
+            color: #CCCCCC;
+        }
+
+        [data-theme="dark"] .footer-contact i {
+            color: #FFB6C1;
+        }
+
+        [data-theme="dark"] .footer-social a {
+            background: #3D3D3D;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="dark"] .footer-social a:hover {
+            background: #4A4A4A;
+            transform: translateY(-5px) rotate(10deg);
+        }
+
+        /* Update social icons colors for dark mode */
+        [data-theme="dark"] .footer-social .fa-github,
+        [data-theme="dark"] .social-icons .fa-github {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .footer-social .fa-instagram,
+        [data-theme="dark"] .social-icons .fa-instagram {
+            color: #E1306C;
+        }
+
+        [data-theme="dark"] .footer-social .fa-discord,
+        [data-theme="dark"] .social-icons .fa-discord {
+            color: #7289DA;
+        }
+
+        [data-theme="dark"] .footer-social .fa-envelope,
+        [data-theme="dark"] .social-icons .fa-envelope {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .copyright {
+            color: #CCCCCC;
+        }
+
+        [data-theme="dark"] .copyright span {
+            color: #FFFFFF;
+        }
+
+        [data-theme="dark"] .copyright-icon {
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -2006,7 +2264,7 @@
                             <span>by</span>
                             <span className="copyright-icon">✨</span>
                             <span>Misha</span>
-                            <span className="copyright-icon">🌸</span>
+                            <span className="copyright-icon"></span>
                             <span>{new Date().getFullYear()}</span>
                         </p>
                     </div>
@@ -2067,6 +2325,42 @@
                 setInterval(fetchCount, 30000);
             }
         }, 100);
+    </script>
+
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+        // Theme Toggle Function
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.querySelector('.theme-toggle i');
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Check for saved theme preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.querySelector('.theme-toggle i');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
     </script>
 
 </body>
