@@ -1405,6 +1405,54 @@
             transform: translateY(-5px) rotate(10deg);
             background: white;
         }
+
+        /* Add this after the social-icons div in the hero section */
+        .visitor-counter {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .counter-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+            border: 2px solid #FFB6C1;
+            transition: all 0.3s ease;
+        }
+
+        .counter-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        .counter-box i {
+            color: #FFB6C1;
+            font-size: 1.2rem;
+        }
+
+        #visitorCount {
+            font-weight: 600;
+            color: #4A4A4A;
+            font-size: 1.1rem;
+            min-width: 60px;
+            display: inline-block;
+        }
+
+        .counter-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .visitor-counter {
+                display: flex;
+                justify-content: center;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -1623,6 +1671,13 @@
                                         <a href="https://www.instagram.com/mishaxgraphics/" target="_blank"><i className="fab fa-instagram"></i></a>
                                         <a href="https://discord.com/users/jolya0" target="_blank"><i className="fab fa-discord"></i></a>
                                         <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
+                                    </div>
+                                    <div className="visitor-counter" data-aos="fade-up" data-aos-delay="300">
+                                        <div className="counter-box">
+                                            <i className="fas fa-eye"></i>
+                                            <span id="visitorCount">Loading...</span>
+                                            <span className="counter-label">Total Visitors</span>
+                                        </div>
                                     </div>
                                     <div className="d-flex gap-3">
                                         <button 
@@ -1867,6 +1922,33 @@
                 navbar.classList.remove('scrolled');
             }
         });
+    </script>
+
+    <!-- Replace the existing Counter.dev script with this one -->
+    <script>
+        // Add Counter.dev tracking
+        const counterScript = document.createElement('script');
+        counterScript.src = "https://cdn.counter.dev/script.js";
+        counterScript.setAttribute('data-id', '668ed6e1-c1d6-4fde-bb61-fa7922e9a2fc');
+        counterScript.setAttribute('data-utcoffset', '8');
+        document.body.appendChild(counterScript);
+
+        // Function to fetch visitor count
+        async function fetchVisitorCount() {
+            try {
+                const response = await fetch('https://api.counter.dev/stats/668ed6e1-c1d6-4fde-bb61-fa7922e9a2fc');
+                const data = await response.json();
+                const count = data.pageviews || 0;
+                document.getElementById('visitorCount').textContent = count.toLocaleString();
+            } catch (err) {
+                console.error('Error fetching visitor count:', err);
+                document.getElementById('visitorCount').textContent = 'Error';
+            }
+        }
+
+        // Update count when page loads and every minute
+        fetchVisitorCount();
+        setInterval(fetchVisitorCount, 60000);
     </script>
 
 </body>
