@@ -1800,6 +1800,36 @@
         [data-theme="dark"] .copyright-icon {
             filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
         }
+
+        /* Add or update these styles in your dark mode section */
+        [data-theme="dark"] .services-belt::before,
+        [data-theme="dark"] .services-belt::after {
+            display: none; /* Remove the white glow on sides */
+        }
+
+        [data-theme="dark"] .services-belt {
+            background: transparent; /* Remove any background gradient */
+        }
+
+        [data-theme="dark"] .services-belt-row {
+            gap: 1rem; /* Add some spacing between cards */
+        }
+
+        [data-theme="dark"] .service-card {
+            background: #3D3D3D;
+            border: 3px solid #4A4A4A;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-theme="dark"] .service-card:hover {
+            border-color: #FFB6C1;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+        }
+
+        /* Update the background of services section to be solid in dark mode */
+        [data-theme="dark"] #services {
+            background-color: #2D2D2D !important;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
