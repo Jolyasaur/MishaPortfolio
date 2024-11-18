@@ -1919,6 +1919,47 @@
             <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
             <a href="https://www.reddit.com/user/Jolya0" target="_blank"><i className="fab fa-reddit"></i></a>
         </div>
+
+        /* Add these styles for the skill icons */
+        .skill-name i.fa-html5 {
+            color: #E44D26;
+        }
+
+        .skill-name i.fa-css3-alt {
+            color: #264DE4;
+        }
+
+        .skill-name i.fa-js {
+            color: #F7DF1E;
+            background: #000;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        .skill-name i.fa-react {
+            color: #61DAFB;
+        }
+
+        .skill-name i.fa-bootstrap {
+            color: #7952B3;
+        }
+
+        /* Adjust the vertical alignment */
+        .skill-name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .skill-name span:first-child {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Dark mode adjustments */
+        [data-theme="dark"] .skill-name i {
+            filter: brightness(1.2);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -2131,7 +2172,7 @@
                                 </div>
                                 <div className="col-md-8 text-md-start" data-aos="fade-left">
                                     <h1 className="display-1 mb-4">Hello, I'm Misha</h1>
-                                    <p className="lead mb-4">| UI/UX Designer | Graphic Designer |</p>
+                                    <p className="lead mb-4">| UI/UX Designer | Graphic Designer | Gamer 🎮 |</p>
                                     <div className="social-icons">
                                         <a href="https://github.com/Jolyasaur" target="_blank"><i className="fab fa-github"></i></a>
                                         <a href="https://www.instagram.com/mishaxgraphics/" target="_blank"><i className="fab fa-instagram"></i></a>
@@ -2250,12 +2291,36 @@
                                 <div className="col-md-6">
                                     <div className="skills-container">
                                         {[
-                                            { name: "HTML", percentage: 60 },
-                                            { name: "CSS", percentage: 55 },
-                                            { name: "JavaScript", percentage: 30 },
-                                            { name: "React", percentage: 5 },
-                                            { name: "Bootstrap", percentage: 60 },
-                                            { name: "Graphic Design", percentage: 80 }
+                                            { 
+                                                name: "HTML", 
+                                                percentage: 60,
+                                                icon: "fab fa-html5" // HTML5 logo
+                                            },
+                                            { 
+                                                name: "CSS", 
+                                                percentage: 55,
+                                                icon: "fab fa-css3-alt" // CSS3 logo
+                                            },
+                                            { 
+                                                name: "JavaScript", 
+                                                percentage: 30,
+                                                icon: "fab fa-js" // JavaScript logo
+                                            },
+                                            { 
+                                                name: "React", 
+                                                percentage: 5,
+                                                icon: "fab fa-react" // React logo
+                                            },
+                                            { 
+                                                name: "Bootstrap", 
+                                                percentage: 60,
+                                                icon: "fab fa-bootstrap" // Bootstrap logo
+                                            },
+                                            { 
+                                                name: "Graphic Design", 
+                                                percentage: 80,
+                                                icon: "canva" // We'll handle this specially for Canva
+                                            }
                                         ].map((skill, index) => (
                                             <div 
                                                 key={index} 
@@ -2264,7 +2329,26 @@
                                                 data-aos-delay={index * 50}
                                             >
                                                 <div className="skill-name">
-                                                    <span>✦ {skill.name}</span>
+                                                    <span>
+                                                        {skill.icon === "canva" ? (
+                                                            <img 
+                                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" 
+                                                                alt="Canva"
+                                                                style={{
+                                                                    width: "20px",
+                                                                    height: "20px",
+                                                                    marginRight: "8px",
+                                                                    verticalAlign: "middle"
+                                                                }}
+                                                            />
+                                                        ) : (
+                                                            <i className={skill.icon} style={{
+                                                                marginRight: "8px",
+                                                                fontSize: "18px"
+                                                            }}></i>
+                                                        )}
+                                                        {skill.name}
+                                                    </span>
                                                     <span>{skill.percentage}%</span>
                                                 </div>
                                                 <div className="progress">
