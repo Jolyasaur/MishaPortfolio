@@ -1082,6 +1082,35 @@
             }
         }
 
+        /* Simplified Services Section */
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            padding: 2rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            flex: 0 1 300px;
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid #FFE4E1;
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFB6C1;
+            box-shadow: 8px 8px 20px rgba(255, 182, 193, 0.3);
+        }
+
         /* Update the belt animation styles */
         .services-belt {
             display: flex;
@@ -1109,20 +1138,6 @@
             100% {
                 transform: translateX(calc(-300px * 6));
             }
-        }
-
-        .service-card {
-            min-width: 300px;
-            margin: 0 1rem;
-            flex-shrink: 0;
-            background: white;
-            border-radius: 25px;
-            padding: 2rem;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 3px solid #FFE4E1;
-            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
-            position: relative;
-            overflow: hidden;
         }
 
         /* Add fade effect on the edges */
@@ -1542,383 +1557,7 @@
                 height: 0.6rem;
             }
         }
-
-        /* Floating Theme Toggle Button */
-        .theme-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
-            border: 3px solid white;
-            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
-            z-index: 1000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
-        }
-
-        .theme-toggle i {
-            font-size: 1.5rem;
-            color: #4A4A4A;
-            transition: all 0.3s ease;
-        }
-
-        /* Dark Mode Styles */
-        [data-theme="dark"] {
-            background-color: #2D2D2D;
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .hero-section {
-            background: linear-gradient(45deg, #3D3D3D, #2D2D2D);
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .project-card {
-            background: linear-gradient(145deg, #3D3D3D, #2D2D2D);
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .project-card .card-title,
-        [data-theme="dark"] .project-card .card-text {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .navbar {
-            background-color: rgba(45, 45, 45, 0.9) !important;
-        }
-
-        [data-theme="dark"] .navbar-brand,
-        [data-theme="dark"] .nav-link {
-            color: #FFFFFF !important;
-        }
-
-        [data-theme="dark"] #projects,
-        [data-theme="dark"] #skills,
-        [data-theme="dark"] #services {
-            background-color: #2D2D2D !important;
-        }
-
-        [data-theme="dark"] .footer {
-            background: linear-gradient(135deg, #3D3D3D, #2D2D2D);
-        }
-
-        [data-theme="dark"] .copyright {
-            background: linear-gradient(135deg, rgba(61, 61, 61, 0.7), rgba(45, 45, 45, 0.7));
-        }
-
-        /* Responsive Design for Theme Toggle */
-        @media (max-width: 768px) {
-            .theme-toggle {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
-            }
-
-            .theme-toggle i {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Add these to your existing dark mode styles section */
-        [data-theme="dark"] .btn-light,
-        [data-theme="dark"] .btn-outline-light {
-            background-color: #FFB6C1;
-            border-color: #FFB6C1;
-            color: #2D2D2D !important;
-        }
-
-        [data-theme="dark"] .btn-light:hover,
-        [data-theme="dark"] .btn-outline-light:hover {
-            background-color: #FFC0CB;
-            border-color: #FFC0CB;
-            color: #2D2D2D !important;
-        }
-
-        [data-theme="dark"] .hero-btn {
-            background: linear-gradient(135deg, #FFB6C1, #FFC0CB);
-            color: #2D2D2D !important;
-            border-color: #FFB6C1;
-        }
-
-        [data-theme="dark"] .hero-btn:hover {
-            background: linear-gradient(135deg, #FFC0CB, #FFD1DC);
-            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
-        }
-
-        [data-theme="dark"] .badge {
-            background: linear-gradient(135deg, #FFB6C1, #FFC0CB) !important;
-            color: #2D2D2D !important;
-            border-color: #FFB6C1;
-        }
-
-        [data-theme="dark"] .skill-badge {
-            background: linear-gradient(135deg, #FFB6C1, #FFC0CB) !important;
-            color: #2D2D2D !important;
-            border-color: #FFB6C1;
-        }
-
-        [data-theme="dark"] .counter-box {
-            background: rgba(255, 182, 193, 0.9);
-            color: #2D2D2D;
-            border-color: #FFB6C1;
-        }
-
-        [data-theme="dark"] #visitorCount {
-            color: #2D2D2D;
-        }
-
-        [data-theme="dark"] .counter-label {
-            color: #2D2D2D;
-        }
-
-        [data-theme="dark"] .contact-form {
-            background: #3D3D3D;
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .form-control {
-            background: rgba(61, 61, 61, 0.9);
-            border-color: #4A4A4A;
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .form-control::placeholder {
-            color: #AAAAAA;
-        }
-
-        [data-theme="dark"] .form-control:focus {
-            background: rgba(61, 61, 61, 0.95);
-            border-color: #FFB6C1;
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .skills-container {
-            background: #3D3D3D;
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .skill-progress {
-            background: #3D3D3D;
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .skill-name {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .progress {
-            background-color: #2D2D2D;
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .service-card {
-            background: #3D3D3D;
-            border-color: #4A4A4A;
-        }
-
-        [data-theme="dark"] .service-title,
-        [data-theme="dark"] .service-description {
-            color: #FFFFFF;
-        }
-
-        /* Add these to your existing dark mode styles section */
-        [data-theme="dark"] .footer-heading {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .footer p {
-            color: #CCCCCC;
-        }
-
-        [data-theme="dark"] .footer-links a {
-            color: #CCCCCC;
-        }
-
-        [data-theme="dark"] .footer-links a:hover {
-            color: #FFB6C1;
-        }
-
-        [data-theme="dark"] .footer-contact {
-            color: #CCCCCC;
-        }
-
-        [data-theme="dark"] .footer-contact i {
-            color: #FFB6C1;
-        }
-
-        [data-theme="dark"] .footer-social a {
-            background: #3D3D3D;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        [data-theme="dark"] .footer-social a:hover {
-            background: #4A4A4A;
-            transform: translateY(-5px) rotate(10deg);
-        }
-
-        /* Update social icons colors for dark mode */
-        [data-theme="dark"] .footer-social .fa-github,
-        [data-theme="dark"] .social-icons .fa-github {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .footer-social .fa-instagram,
-        [data-theme="dark"] .social-icons .fa-instagram {
-            color: #E1306C;
-        }
-
-        [data-theme="dark"] .footer-social .fa-discord,
-        [data-theme="dark"] .social-icons .fa-discord {
-            color: #7289DA;
-        }
-
-        [data-theme="dark"] .footer-social .fa-envelope,
-        [data-theme="dark"] .social-icons .fa-envelope {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .copyright {
-            color: #CCCCCC;
-        }
-
-        [data-theme="dark"] .copyright span {
-            color: #FFFFFF;
-        }
-
-        [data-theme="dark"] .copyright-icon {
-            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
-        }
-
-        /* Add or update these styles in your dark mode section */
-        [data-theme="dark"] .services-belt::before,
-        [data-theme="dark"] .services-belt::after {
-            display: none; /* Remove the white glow on sides */
-        }
-
-        [data-theme="dark"] .services-belt {
-            background: transparent; /* Remove any background gradient */
-        }
-
-        [data-theme="dark"] .services-belt-row {
-            gap: 1rem; /* Add some spacing between cards */
-        }
-
-        [data-theme="dark"] .service-card {
-            background: #3D3D3D;
-            border: 3px solid #4A4A4A;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        [data-theme="dark"] .service-card:hover {
-            border-color: #FFB6C1;
-            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
-        }
-
-        /* Update the background of services section to be solid in dark mode */
-        [data-theme="dark"] #services {
-            background-color: #2D2D2D !important;
-        }
-
-        /* Update the Sushi Belt Animation styles */
-        .sushi-belt-container {
-            width: 100%;
-            height: 60px;
-            background: linear-gradient(to right, #FFF5F8 0%, transparent 5%, transparent 95%, #FFF5F8 100%);
-            overflow: hidden;
-            position: relative;
-            padding: 0;
-            border-top: 2px solid rgba(255, 182, 193, 0.3);
-            border-bottom: 2px solid rgba(255, 182, 193, 0.3);
-        }
-
-        .sushi-belt {
-            display: flex;
-            width: fit-content; /* Allow content to determine width */
-            animation: sushiScroll 30s linear infinite;
-            padding: 10px 0;
-            align-items: center;
-        }
-
-        .sushi-item {
-            font-size: 1.8rem;
-            margin: 0 15px;
-            animation: sushiBounce 2s ease-in-out infinite;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes sushiScroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Move by half the width for seamless loop */
-            }
-        }
-
-        @keyframes sushiBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Dark mode update for the borders */
-        [data-theme="dark"] .sushi-belt-container {
-            background: linear-gradient(to right, #2D2D2D 0%, transparent 5%, transparent 95%, #2D2D2D 100%);
-            border-top: 2px solid rgba(255, 182, 193, 0.2);
-            border-bottom: 2px solid rgba(255, 182, 193, 0.2);
-        }
-
-        /* Add this to your social icons styles */
-        .social-icons .fa-reddit,
-        .footer-social .fa-reddit {
-            color: #FF4500;
-        }
-
-        .social-icons .fa-reddit:hover,
-        .footer-social .fa-reddit:hover {
-            color: #FF5700;
-        }
-
-        /* Add this to your dark mode styles */
-        [data-theme="dark"] .footer-social .fa-reddit,
-        [data-theme="dark"] .social-icons .fa-reddit {
-            color: #FF4500;
-        }
-
-        /* Update the social icons section in the hero section */
-        <div className="social-icons">
-            <a href="https://github.com/Jolyasaur" target="_blank"><i className="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/mishaxgraphics/" target="_blank"><i className="fab fa-instagram"></i></a>
-            <a href="https://discord.com/users/jolya0" target="_blank"><i className="fab fa-discord"></i></a>
-            <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
-            <a href="https://www.reddit.com/user/Jolya0" target="_blank"><i className="fab fa-reddit"></i></a>
-        </div>
-
-        /* Update the footer social icons */
-        <div className="footer-social">
-            <a href="https://github.com/Jolyasaur" target="_blank"><i className="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/mishaxgraphics/" target="_blank"><i className="fab fa-instagram"></i></a>
-            <a href="https://discord.com/users/jolya0" target="_blank"><i className="fab fa-discord"></i></a>
-            <a href="mailto:mishaxgraphics@gmail.com"><i className="fas fa-envelope"></i></a>
-            <a href="https://www.reddit.com/user/Jolya0" target="_blank"><i className="fab fa-reddit"></i></a>
-        </div>
 
         /* Add these styles for the skill icons */
         .skill-name i.fa-html5 {
@@ -1956,9 +1595,471 @@
             align-items: center;
         }
 
-        /* Dark mode adjustments */
-        [data-theme="dark"] .skill-name i {
-            filter: brightness(1.2);
+        /* Add these styles in the style section */
+        .image-credit {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .image-credit {
+                font-size: 0.6rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Services Belt Animation */
+        .services-belt {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 2rem 0;
+            background: linear-gradient(to right, #FFF5F8 0%, transparent 5%, transparent 95%, #FFF5F8 100%);
+        }
+
+        .services-belt-row {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            padding: 1rem 0;
+            width: fit-content;
+        }
+
+        .services-belt-row:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-300px * 7));
+            }
+        }
+
+        /* Service Card Styles */
+        .service-card {
+            min-width: 300px;
+            margin: 0 1rem;
+            flex-shrink: 0;
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid #FFE4E1;
+            box-shadow: 5px 5px 15px rgba(255, 182, 193, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dark mode styles */
+        [data-theme="dark"] {
+            --bg-primary: #1a1a1a;
+            --text-primary: #ffffff;
+            --card-bg: #2d2d2d;
+            --border-color: #444;
+            --gradient-primary: linear-gradient(45deg, #FF6B6B, #FF4646);
+        }
+
+        [data-theme="dark"] .hero-section {
+            background: linear-gradient(45deg, #2d2d2d, #1a1a1a);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .particle {
+            background: rgba(255, 107, 107, 0.4);
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+        }
+
+        [data-theme="dark"] .project-card,
+        [data-theme="dark"] .skills-container,
+        [data-theme="dark"] .service-card {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .card-title,
+        [data-theme="dark"] .card-text,
+        [data-theme="dark"] .service-title,
+        [data-theme="dark"] .service-description {
+            color: var(--text-primary);
+        }
+
+        /* Theme toggle button styles */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #FFB6C1;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle i {
+            font-size: 1.5rem;
+            color: #4A4A4A;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: #FF6B6B;
+        }
+
+        [data-theme="dark"] .theme-toggle i {
+            color: #ffffff;
+        }
+
+        /* Add these dark mode styles in your style section, after the existing dark mode styles */
+        [data-theme="dark"] {
+            /* Update existing variables */
+            --bg-primary: #1a1a1a;
+            --text-primary: #ffffff;
+            --card-bg: #2d2d2d;
+            --border-color: #444;
+            --gradient-primary: linear-gradient(45deg, #FF6B6B, #FF4646);
+            --section-bg: #222222;
+            --text-secondary: #cccccc;
+        }
+
+        /* Navbar dark mode */
+        [data-theme="dark"] .navbar {
+            background-color: rgba(26, 26, 26, 0.9) !important;
+        }
+
+        [data-theme="dark"] .navbar-brand,
+        [data-theme="dark"] .nav-link {
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .navbar.scrolled {
+            background-color: rgba(26, 26, 26, 0.95) !important;
+        }
+
+        /* Projects section dark mode */
+        [data-theme="dark"] #projects {
+            background-color: var(--section-bg);
+        }
+
+        [data-theme="dark"] #projects h2,
+        [data-theme="dark"] #skills h2,
+        [data-theme="dark"] #services h2 {
+            color: var(--text-primary);
+        }
+
+        /* Skills section dark mode */
+        [data-theme="dark"] #skills {
+            background-color: var(--section-bg) !important;
+        }
+
+        [data-theme="dark"] .skill-progress {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .progress {
+            background-color: #444;
+        }
+
+        [data-theme="dark"] .skill-name {
+            color: var(--text-primary);
+        }
+
+        /* Services section dark mode */
+        [data-theme="dark"] #services {
+            background-color: var(--section-bg);
+        }
+
+        [data-theme="dark"] .services-belt {
+            background: linear-gradient(
+                to right,
+                var(--section-bg) 0%,
+                transparent 5%,
+                transparent 95%,
+                var(--section-bg) 100%
+            );
+        }
+
+        /* Footer dark mode */
+        [data-theme="dark"] .footer {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(34, 34, 34, 0.9));
+        }
+
+        [data-theme="dark"] .footer-heading {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .footer p,
+        [data-theme="dark"] .footer-links a,
+        [data-theme="dark"] .footer-contact {
+            color: var(--text-secondary);
+        }
+
+        [data-theme="dark"] .footer-social a {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Copyright section dark mode */
+        [data-theme="dark"] .copyright {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(34, 34, 34, 0.7));
+            border-top: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        [data-theme="dark"] .copyright p {
+            color: var(--text-secondary);
+        }
+
+        /* Modal dark mode */
+        [data-theme="dark"] .modal-content {
+            background: var(--card-bg);
+        }
+
+        [data-theme="dark"] .modal-title {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .modal-body {
+            color: var(--text-secondary);
+        }
+
+        /* Button styles in dark mode */
+        [data-theme="dark"] .hero-btn {
+            border-color: #FF6B6B;
+        }
+
+        [data-theme="dark"] .hero-btn.btn-light {
+            background: var(--card-bg);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .hero-btn.btn-outline-light {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .hero-btn:hover {
+            background: linear-gradient(135deg, #FF6B6B, #FF4646);
+            color: var(--text-primary);
+        }
+
+        /* Badge styles in dark mode */
+        [data-theme="dark"] .badge {
+            background: linear-gradient(135deg, #FF6B6B, #FF4646) !important;
+            color: var(--text-primary) !important;
+        }
+
+        /* Skill badge styles in dark mode */
+        [data-theme="dark"] .skill-badge {
+            background: linear-gradient(135deg, #FF6B6B, #FF4646) !important;
+            color: var(--text-primary) !important;
+            border-color: var(--border-color) !important;
+        }
+
+        /* Image container styles in dark mode */
+        [data-theme="dark"] .profile-image-container {
+            background: linear-gradient(45deg, #FF6B6B, #FF4646);
+        }
+
+        /* Social icons in dark mode */
+        [data-theme="dark"] .social-icons a {
+            color: #FF6B6B;
+        }
+
+        [data-theme="dark"] .social-icons a:hover {
+            color: #FF4646;
+        }
+
+        /* Image credit in dark mode */
+        [data-theme="dark"] .image-credit {
+            color: var(--text-secondary);
+        }
+
+        /* Visitor counter in dark mode */
+        [data-theme="dark"] .counter-box {
+            background: var(--card-bg);
+            border-color: #FF6B6B;
+        }
+
+        [data-theme="dark"] #visitorCount {
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] .counter-label {
+            color: var(--text-secondary);
+        }
+
+        /* Add or update these styles in your dark mode section */
+        [data-theme="dark"] .service-card {
+            background: var(--card-bg);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+            box-shadow: none; /* Remove the glow effect in dark mode */
+        }
+
+        [data-theme="dark"] .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #FF6B6B;
+            box-shadow: none; /* Remove the glow effect on hover in dark mode */
+        }
+
+        [data-theme="dark"] .services-belt::before,
+        [data-theme="dark"] .services-belt::after {
+            display: none; /* Remove the fade effect on the edges in dark mode */
+        }
+
+        /* Update these dark mode styles */
+        [data-theme="dark"] {
+            /* Update existing variables with red colors */
+            --accent-primary: #FF6B6B;
+            --accent-secondary: #FF4646;
+            --accent-gradient: linear-gradient(135deg, #FF6B6B, #FF4646);
+            --accent-glow: rgba(255, 107, 107, 0.3);
+        }
+
+        /* Update project cards in dark mode */
+        [data-theme="dark"] .project-card {
+            background: var(--card-bg);
+            border-color: var(--accent-primary);
+            box-shadow: 5px 5px 15px rgba(255, 107, 107, 0.1);
+        }
+
+        [data-theme="dark"] .project-card:hover {
+            border-color: var(--accent-secondary);
+            box-shadow: 8px 8px 20px rgba(255, 107, 107, 0.2);
+        }
+
+        [data-theme="dark"] .project-card .overflow-hidden {
+            border-color: var(--accent-primary);
+        }
+
+        /* Update badges in dark mode */
+        [data-theme="dark"] .project-card .badge {
+            background: var(--accent-gradient) !important;
+            border: 2px solid var(--card-bg);
+            box-shadow: 2px 2px 5px var(--accent-glow);
+        }
+
+        /* Update buttons in dark mode */
+        [data-theme="dark"] .btn-outline-primary {
+            border-color: var(--accent-primary) !important;
+            color: var(--text-primary) !important;
+        }
+
+        [data-theme="dark"] .btn-outline-primary:hover {
+            background: var(--accent-gradient) !important;
+        }
+
+        /* Update section headers in dark mode */
+        [data-theme="dark"] #projects h2::after,
+        [data-theme="dark"] #skills h2::after,
+        [data-theme="dark"] #services h2::after {
+            background: var(--accent-gradient);
+        }
+
+        /* Update skill progress bars in dark mode */
+        [data-theme="dark"] .progress-bar {
+            background: var(--accent-gradient);
+        }
+
+        /* Update skill badges in dark mode */
+        [data-theme="dark"] .skill-badge {
+            background: var(--accent-gradient) !important;
+            border: 2px solid var(--card-bg) !important;
+            box-shadow: 2px 2px 5px var(--accent-glow);
+        }
+
+        /* Update footer in dark mode */
+        [data-theme="dark"] .footer-heading::after {
+            background: var(--accent-gradient);
+        }
+
+        [data-theme="dark"] .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        [data-theme="dark"] .footer-contact i {
+            color: var(--accent-primary);
+        }
+
+        /* Update navbar brand gradient in dark mode */
+        [data-theme="dark"] .navbar-brand {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        [data-theme="dark"] .navbar-brand:hover {
+            background: linear-gradient(45deg, var(--accent-secondary), var(--accent-primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Update nav-link hover effect in dark mode */
+        [data-theme="dark"] .nav-link::after {
+            background: var(--accent-primary);
+        }
+
+        /* Update hero buttons in dark mode */
+        [data-theme="dark"] .hero-btn {
+            border-color: var(--accent-primary);
+        }
+
+        [data-theme="dark"] .hero-btn:hover {
+            background: var(--accent-gradient);
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        /* Update social icons in dark mode */
+        [data-theme="dark"] .social-icons a {
+            color: var(--accent-primary);
+        }
+
+        [data-theme="dark"] .social-icons a:hover {
+            color: var(--accent-secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Update profile image container in dark mode */
+        [data-theme="dark"] .profile-image-container {
+            background: var(--accent-gradient);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        /* Update service cards in dark mode */
+        [data-theme="dark"] .service-card:hover {
+            border-color: var(--accent-primary);
+        }
+
+        /* Update theme toggle in dark mode */
+        [data-theme="dark"] .theme-toggle {
+            background: var(--accent-gradient);
+            box-shadow: 0 2px 10px var(--accent-glow);
+        }
+
+        /* Update scrollbar in dark mode */
+        [data-theme="dark"] ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+        }
+
+        [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -2164,11 +2265,12 @@
                                 <div className="col-md-4" data-aos="fade-right">
                                     <div className="profile-image-container">
                                         <img 
-                                            src="img/misha3.jfif" // Replace with your photo URL
+                                            src="img/misha3.jfif"
                                             alt="Profile" 
                                             className="profile-image"
                                         />
                                     </div>
+                                    <div className="image-credit">credits to GUWEIZ art</div>
                                 </div>
                                 <div className="col-md-8 text-md-start" data-aos="fade-left">
                                     <h1 className="display-1 mb-4">Hello, I'm Misha</h1>
@@ -2182,14 +2284,6 @@
                                     </div>
                                     <div className="d-flex gap-3">
                                         <button 
-                                            className="btn hero-btn btn-light"
-                                            data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom"
-                                            title="Under Development 🚧"
-                                        >
-                                            View My Work
-                                        </button>
-                                        <button 
                                             className="btn hero-btn btn-outline-light"
                                             data-bs-toggle="tooltip"
                                             data-bs-placement="bottom"
@@ -2197,50 +2291,20 @@
                                         >
                                             Download CV
                                         </button>
+                                        <a 
+                                            href="mailto:mishaxgraphics@gmail.com"
+                                            className="btn hero-btn btn-outline-light"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom"
+                                            title="Send me an email! 📧"
+                                        >
+                                            Contact Me
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
-
-                    {/* Sushi Belt Animation */}
-                    <div className="sushi-belt-container">
-                        <div className="sushi-belt">
-                            {/* First set of sushi */}
-                            <div className="sushi-item">🍣</div>
-                            <div className="sushi-item">🍱</div>
-                            <div className="sushi-item">🍜</div>
-                            <div className="sushi-item">🍙</div>
-                            <div className="sushi-item">🍤</div>
-                            <div className="sushi-item">🍥</div>
-                            <div className="sushi-item">🍡</div>
-                            <div className="sushi-item">🍘</div>
-                            <div className="sushi-item">🍢</div>
-                            <div className="sushi-item">🥢</div>
-                            {/* Second set for seamless loop */}
-                            <div className="sushi-item">🍣</div>
-                            <div className="sushi-item">🍱</div>
-                            <div className="sushi-item">🍜</div>
-                            <div className="sushi-item">🍙</div>
-                            <div className="sushi-item">🍤</div>
-                            <div className="sushi-item">🍥</div>
-                            <div className="sushi-item">🍡</div>
-                            <div className="sushi-item">🍘</div>
-                            <div className="sushi-item">🍢</div>
-                            <div className="sushi-item">🥢</div>
-                            {/* Third set for extra smoothness */}
-                            <div className="sushi-item">🍣</div>
-                            <div className="sushi-item">🍱</div>
-                            <div className="sushi-item">🍜</div>
-                            <div className="sushi-item">🍙</div>
-                            <div className="sushi-item">🍤</div>
-                            <div className="sushi-item">🍥</div>
-                            <div className="sushi-item">🍡</div>
-                            <div className="sushi-item">🍘</div>
-                            <div className="sushi-item">🍢</div>
-                            <div className="sushi-item">🥢</div>
-                        </div>
-                    </div>
 
                     {/* Enhanced Projects Section */}
                     <section id="projects" className="py-5">
@@ -2371,7 +2435,6 @@
                             <h2 data-aos="fade-up">✨ My Services ✨</h2>
                             <div className="services-belt">
                                 <div className="services-belt-row">
-                                    {/* First set of cards */}
                                     <div className="service-card">
                                         <div className="service-icon">🎨</div>
                                         <h3 className="service-title">Graphic Design</h3>
@@ -2421,7 +2484,7 @@
                                             Eye-catching thumbnails for gaming content.
                                         </p>
                                     </div>
-                                    {/* Duplicate cards for seamless loop */}
+                                    {/* Duplicate first two cards for seamless loop */}
                                     <div className="service-card">
                                         <div className="service-icon">🎨</div>
                                         <h3 className="service-title">Graphic Design</h3>
@@ -2522,39 +2585,31 @@
         });
     </script>
 
-    <div class="theme-toggle" onclick="toggleTheme()">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
-    </div>
+    </button>
 
     <script>
-        // Theme Toggle Function
-        function toggleTheme() {
-            const body = document.body;
-            const icon = document.querySelector('.theme-toggle i');
-            
-            if (body.getAttribute('data-theme') === 'dark') {
-                body.removeAttribute('data-theme');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'dark');
-            }
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const icon = themeToggle.querySelector('i');
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
 
-        // Check for saved theme preference
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const icon = document.querySelector('.theme-toggle i');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            if (savedTheme === 'dark') {
-                document.body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Toggle icon
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         });
     </script>
 
